@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:9000/api/guests'
+const baseURL = 'http://localhost:9000/api/guests/'
 
 export const getGuests = () => {
     return fetch(baseURL)
@@ -6,6 +6,7 @@ export const getGuests = () => {
 }
 
 export const postGuest = (payload) => {
+    console.log("postGuest",payload)
     return fetch(baseURL, {
         method: 'POST',
         body: JSON.stringify(payload),

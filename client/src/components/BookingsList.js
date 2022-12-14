@@ -1,12 +1,15 @@
 import React from 'react';
 import Booking from './Booking';
 
-const BookingsList = () => {
+const BookingsList = ({allGuests,removeGuest}) => {
+
+    
+    const guestsToDisplay = allGuests.map((guest) => {
+        return <Booking key={guest._id} guest = {guest} removeGuest={removeGuest}/>
+    })
     return (
         <ul>
-            <Booking />
-            <Booking />
-            <Booking />
+        {guestsToDisplay}
         </ul>
     );
 };

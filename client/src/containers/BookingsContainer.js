@@ -12,10 +12,23 @@ const BookingsContainer = () => {
         });
     }, []);
 
+    const addGuest = (guest) => {
+        const newGuests = [...allGuests, guest];
+        console.log(newGuests)
+        setAllGuests(newGuests);
+    };
+
+    const removeGuest = (id) => {
+        const newGuestsList = allGuests.map(guest => guest);
+        const indexToDelete = newGuestsList.map(guest => guest._id).indexOf(id);
+        newGuestsList.splice(indexToDelete, 1);
+        setAllGuests(newGuestsList);
+    };
+
     return (
         <>
-            <BookingInputForm />
-            <BookingsList />
+            <BookingInputForm addGuest={addGuest} />
+            <BookingsList allGuests={allGuests} removeGuest={removeGuest} />
         </>
     );
 };

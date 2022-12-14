@@ -28,12 +28,12 @@ const createRouter = function (collection) {
             });
     });
 
-    //create new sighting
+    //create new Guest
     router.post('/', (req, res) => {
-        const newSighting = req.body;
-        console.log('newSighting:', req);
+        const newGuest = req.body;
+        console.log('newGuest:', req);
         collection
-            .insertOne(newSighting)
+            .insertOne(newGuest)
             .then((result) => {
                 res.json(result.ops[0]);
             })

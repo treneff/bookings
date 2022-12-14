@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 
 app.use(express.json());
+app.use(cors())
 
 const MongoClient = require('mongodb').MongoClient;
 const createRouter = require('./helpers/create_router.js')

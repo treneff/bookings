@@ -1,7 +1,14 @@
 import React from 'react';
+import Booking from './Booking';
 
 const BookingsList = () => {
-    return <div>BookingsList</div>;
+    return (
+        <ul>
+            <Booking />
+            <Booking />
+            <Booking />
+        </ul>
+    );
 };
 
 export default BookingsList;
